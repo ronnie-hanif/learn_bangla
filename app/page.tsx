@@ -17,10 +17,11 @@ type Strength = { correct: number; wrong: number; lastSeen: number };
 
 const key = (k: string) => `bengali-buddy:${k}`;
 const loadStrength = (): Record<string, Strength> => {
+  if (typeof window === 'undefined') return {};
   try { return JSON.parse(localStorage.getItem(key('strength')) || '{}'); } catch { return {}; }
 };
-const saveStrength = (s: Record<string, Strength>) => localStorage.setItem(key('strength'), JSON.stringify(s));
 const loadPrefs = () => {
+  if (typeof window === 'undefined') return { translit: true, photos: true };
   try { return JSON.parse(localStorage.getItem(key('prefs')) || 'null') || { translit: true, photos: true }; }
   catch { return { translit: true, photos: true }; }
 };
@@ -176,7 +177,9 @@ export default function Page() {
   const [topic, setTopic] = useState<string | null>(null);
   const [round, setRound] = useState<ReturnType<typeof makeRound>>([]);
   const [idx, setIdx] = useState(0);
-  const [streak, setStreak] = useState(() => Number(localStorage.getItem(key('streak'))) || 0);
+  const [streak, setStreak] = useState(
+  () => (typeof window !== 'undefined' ? Number(localStorage.getItem(key('streak'))) || 0 : 0)
+  );
 
   useEffect(() => { savePrefs(prefs); }, [prefs]);
 
