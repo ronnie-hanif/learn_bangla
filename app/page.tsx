@@ -35,7 +35,7 @@ const CARDS: Card[] = [
   { id: 'hello', en: 'Hello', bn: 'হ্যালো', translit: 'hyālō', topic: 'Basics', emoji: '👋', img: U('wave hello person') },
   { id: 'hi', en: 'Hi', bn: 'হাই', translit: 'hai', topic: 'Basics', emoji: '🙋', img: U('greeting wave hand') },
   { id: 'how_are_you', en: 'How are you?', bn: 'আপনি কেমন আছেন?', translit: 'apni kemon achen?', topic: 'Basics', emoji: '🙂', img: U('smiling person portrait friendly') },
-  { id: 'im_fine', en: \"I'm fine\", bn: 'আমি ভালো আছি', translit: 'ami bhalo achi', topic: 'Basics', emoji: '💪', img: U('thumbs up success') },
+  { id: 'im_fine', en: "I'm fine", bn: 'আমি ভালো আছি', translit: 'ami bhalo achi', topic: 'Basics', emoji: '💪', img: U('thumbs up success') },
   { id: 'please', en: 'Please', bn: 'দয়া করে', translit: 'dôya kore', topic: 'Basics', emoji: '🙏', img: U('hands together please gesture') },
   { id: 'thank_you', en: 'Thank you', bn: 'ধন্যবাদ', translit: 'dhônnôbād', topic: 'Basics', emoji: '🙏', img: U('thank you card note') },
   { id: 'sorry', en: 'Sorry', bn: 'দুঃখিত', translit: 'dukkhito', topic: 'Basics', emoji: '😔', img: U('apology sorry') },
